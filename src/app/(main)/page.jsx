@@ -1,5 +1,4 @@
 import FeaturedBooks from '@/components/FeaturedBooks/FeaturedBooks';
-import Footer from '@/components/footer/Footer';
 import Hero from '@/components/hero/Hero';
 import Testimonials from '@/components/testimonials/Testimonials';
 import Trend from '@/components/trend/Trend';
@@ -20,7 +19,6 @@ const  Main = async () => {
             <Trend></Trend>
             <FeaturedBooks books={books.slice(0,4)}></FeaturedBooks>
             <Testimonials reviews={reviews.reviews}></Testimonials>
-            <Footer></Footer>
         </div>
     );
 };

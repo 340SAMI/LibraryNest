@@ -32,7 +32,7 @@ export default function FeaturedBooks({ books }) {
               transition-all duration-300 hover:-translate-y-2"
             >
               {/* Book Cover */}
-              <div className="h-64 flex items-center justify-center p-6 bg-gray-100">
+              <div className="h-64 flex overflow-hidden items-center justify-center p-6 bg-gray-100">
                 <Image
                   src={book.image_url}
                   alt={book.title}

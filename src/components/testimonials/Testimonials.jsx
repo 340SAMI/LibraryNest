@@ -19,7 +19,7 @@ export default function Testimonials({ reviews }) {
 
         <Swiper
           modules={[Navigation, Autoplay, Pagination]}
-          autoplay={{ delay: 5000 }}
+          autoplay={{ delay: 4000 }}
           pagination={{ clickable: true }}
           navigation={true}
           loop={true}
