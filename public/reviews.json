@@ -1,0 +1,40 @@
+{
+  "reviews": [
+    {
+      "id": 1,
+      "name": "Sarah Ahmed",
+      "role": "Avid Reader",
+      "avatar": "https://i.pravatar.cc/150?u=sarah",
+      "rating": 5,
+      "review": "LibraryNest has made reading so much more enjoyable! The collection is vast and borrowing books is incredibly easy.",
+      "book": "The Midnight Library"
+    },
+    {
+      "id": 2,
+      "name": "Rahim Khan",
+      "role": "Software Engineer",
+      "avatar": "https://i.pravatar.cc/150?u=rahim",
+      "rating": 5,
+      "review": "As a tech enthusiast, I love the clean interface and huge selection of programming books. Best digital library I've used!",
+      "book": "Clean Code"
+    },
+    {
+      "id": 3,
+      "name": "Nadia Islam",
+      "role": "University Student",
+      "avatar": "https://i.pravatar.cc/150?u=nadia",
+      "rating": 4,
+      "review": "The category filters and search make finding books super easy. Perfect for students like me!",
+      "book": "Sapiens"
+    },
+    {
+      "id": 4,
+      "name": "Tanvir Hasan",
+      "role": "High School Teacher",
+      "avatar": "https://i.pravatar.cc/150?u=tanvir",
+      "rating": 5,
+      "review": "Excellent platform! My students love the variety and I can easily track borrowed books.",
+      "book": "Atomic Habits"
+    }
+  ]
+}
