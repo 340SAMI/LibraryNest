@@ -1,10 +1,16 @@
+import FeaturedBooks from '@/components/FeaturedBooks/FeaturedBooks';
+import Hero from '@/components/hero/Hero';
+import Trend from '@/components/trend/Trend';
 import React from 'react';
 
-const main = () => {
+const  main = async () => {
+    const res = await fetch("https://books-json-dvh6.onrender.com/books",{cache:'no-cache'});
+    const books = await res.json()
     return (
         <div>
-            <h3>lghdglfdgh</h3>
-            <h1>wadsdaifsdfj,zdch</h1>
+            <Hero></Hero>
+            <Trend></Trend>
+            <FeaturedBooks books={books.slice(0,4)}></FeaturedBooks>
         </div>
     );
 };
