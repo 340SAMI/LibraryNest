@@ -2,10 +2,9 @@
 import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
 import React from 'react';
-
 import { useForm } from 'react-hook-form';
-import { FaGithub } from 'react-icons/fa';
-import { FcGoogle } from 'react-icons/fc';
+import { toast } from 'react-toastify';
+import SocialAuth from '@/components/SocialAuth';
 
 const Page = () => {
   const {
@@ -25,7 +24,14 @@ const Page = () => {
     callbackURL: "/",
 });
 
-console.log(val,error, "see the res")
+    if (error) {
+      toast.error(error.message);
+      return;
+    }
+
+    if (val) {
+      toast.success("Login successful!");
+    }
 
   }
   return (
@@ -74,27 +80,7 @@ console.log(val,error, "see the res")
           </button>
         </form>
 
-        <div className="mt-6 flex items-center gap-3 text-sm text-slate-400">
-          <span className="h-px flex-1 bg-slate-200"></span>
-          <span>or continue with</span>
-          <span className="h-px flex-1 bg-slate-200"></span>
-        </div>
-
-        <button
-          type="button"
-          className="mt-6 flex w-full items-center justify-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-50"
-        >
-            <FcGoogle />
-          Sign in with Google
-        </button>
-
-        <button
-          type="button"
-          className="mt-6 flex w-full items-center justify-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-50"
-        >
-            <FaGithub />
-          Sign in with Github
-        </button>
+        <SocialAuth />
         <p className="mt-4">
           Dont have an account?{" "}
           <Link href={"/register"} className="text-blue-500">

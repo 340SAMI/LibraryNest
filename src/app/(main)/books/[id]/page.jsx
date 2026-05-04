@@ -1,6 +1,9 @@
+import { auth } from '@/lib/auth';
+import { headers } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import BorrowButton from '@/components/BorrowButton';
 
 const page = async ({params}) => {
 
@@ -11,6 +14,11 @@ const page = async ({params}) => {
     const book = await res.json();
 
     const { title, author, description, category, available_quantity: quantity, image_url: img } = book;
+
+        const session = await auth.api.getSession({
+            headers: await headers()
+        })
+    
 
     return (
       <div className="min-h-screen py-12">
@@ -78,10 +86,7 @@ const page = async ({params}) => {
             </div>
 
             <div className="rounded-3xl border border-slate-200/70 bg-slate-50/90 p-6 shadow-sm">
-              <button className="w-full rounded-2xl bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
-                Borrow this book
-              </button>
-
+              <BorrowButton bookTitle={title} />
             </div>
 
           </div>
