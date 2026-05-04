@@ -34,11 +34,11 @@ export default function Navbar() {
 
 
         {/* Right Button */}
-        <div>
+        <Link href={"/login"}>
           <button className="px-4 py-1.5 border rounded-lg text-sm hover:bg-gray-300 transition">
             Login
           </button>
-        </div>
+        </Link>
 
       </nav>
     </div>

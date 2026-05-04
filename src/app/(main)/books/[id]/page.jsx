@@ -19,7 +19,7 @@ const page = async ({params}) => {
 
           {/* Left — Cover + Meta */}
               <div className="shrink-0 max-w-[340px] flex flex-col gap-4">
-            <div className="aspect-10/13 w-full overflow-hidden rounded-[28px]">
+            <div className=" aspect-10/16 border border-black w-full overflow-auto rounded-[28px]">
               <Image
                 src={img}
                 alt={title}
