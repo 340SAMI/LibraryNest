@@ -2,6 +2,11 @@
 import AllBooks from '@/components/BookComp/AllBooks';
 import React from 'react';
 
+
+export  const metadata = {
+  title: "LibraryNest - AllBooks",
+};
+
 const Books = async () => {
 
   const res = await fetch('https://books-json-dvh6.onrender.com/books',{cache:'no-cache'});

@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import SocialAuth from '@/components/SocialAuth';
 
+
 const Page = () => {
   const {
     register,
