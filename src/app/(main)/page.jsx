@@ -8,7 +8,7 @@ const  Main = async () => {
     const res = await fetch("https://books-json-dvh6.onrender.com/books",{cache:'no-cache'});
     const books = await res.json()
 
-    const res2 = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/reviews.json`,{ cache: 'no-cache'});
+    const res2 = await fetch(`${process.env.BETTER_AUTH_URL}/reviews.json`,{ cache: 'no-cache'});
     const reviews = await res2.json()
 
     console.log(reviews, "please show")

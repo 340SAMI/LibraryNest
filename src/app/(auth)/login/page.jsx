@@ -1,4 +1,5 @@
 "use client";
+import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
 import React from 'react';
 
@@ -13,8 +14,20 @@ const Page = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data, "data");
-console.log(errors, "error");
+  const onSubmit = async (data) => {console.log(data, "data");
+
+    const {email, password} = await data;
+
+    const { data:val, error } = await authClient.signIn.email({
+    email: email, // required
+    password: password, // required
+    rememberMe: true,
+    callbackURL: "/",
+});
+
+console.log(val,error, "see the res")
+
+  }
   return (
     <main className="min-h-screen bg-slate-100 flex items-center justify-center px-4 py-10">
       <section className="w-full max-w-md bg-white border border-slate-200 rounded-[2rem] shadow-[0_35px_60px_-15px_rgba(15,23,42,0.2)] p-8">
@@ -26,7 +39,7 @@ console.log(errors, "error");
 
         <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
           <div className="space-y-2">
-            <label htmlFor="email" className="text-sm font-medium text-slate-700">
+            <label htmlFor="email"className="text-sm  font-medium text-slate-700">
               Email
             </label>
             <input
